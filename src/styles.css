@@ -1,0 +1,509 @@
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+a {
+  color: var(--primary);
+}
+.brand,
+.btn,
+.route-item {
+  text-decoration: none;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.full {
+  width: 100%;
+}
+.grow {
+  flex: 1;
+}
+.narrow {
+  max-width: 760px;
+}
+.panel {
+  margin-bottom: 22px;
+}
+.content {
+  max-width: 1280px;
+  margin: auto;
+  padding: 32px;
+}
+.user-line {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.app-header {
+  padding: 20px 32px;
+  background: white;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-header nav {
+  display: flex;
+  gap: 24px;
+}
+.app-header nav a {
+  text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.app-header nav a.active {
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+}
+.notice {
+  border: 1px solid #cadeda;
+  background: #edf5f3;
+  border-radius: 12px;
+  padding: 14px 18px;
+  line-height: 1.6;
+  margin: 18px 0;
+  color: #264c55;
+}
+.error {
+  border: 1px solid #eac0b4;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff1ea;
+  color: #803d27;
+  margin: 14px 0;
+}
+.error p {
+  margin-top: 0;
+}
+.loading {
+  padding: 30px;
+  color: var(--muted);
+}
+.account-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  font-size: 14px;
+}
+.auth-box {
+  max-width: 540px;
+  width: 100%;
+}
+.auth-box .brand {
+  margin-bottom: 20px;
+}
+.auth-box h1 {
+  font-size: 34px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+}
+.field input,
+.field select {
+  min-height: 48px;
+  width: 100%;
+}
+.stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 24px;
+}
+.stat strong {
+  overflow-wrap: anywhere;
+}
+.hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
+}
+.hero .notice {
+  font-size: 13px;
+}
+.hero-card .eyebrow {
+  color: #bfe3df;
+}
+.options {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.options legend {
+  width: 100%;
+  padding: 0;
+}
+.option {
+  cursor: pointer;
+}
+.option input {
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.option:has(input:disabled) {
+  cursor: default;
+}
+.practice-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+.session-progress {
+  width: 100%;
+  height: 8px;
+  margin-bottom: 24px;
+}
+.clinical-box p:first-child {
+  margin-top: 0;
+}
+.clinical-box p:last-child {
+  margin-bottom: 0;
+}
+.feedback h2 {
+  font-size: 20px;
+}
+.feedback + .btn {
+  margin-top: 20px;
+}
+.axes {
+  display: grid;
+  gap: 18px;
+}
+.axes progress {
+  width: 100%;
+  height: 10px;
+  accent-color: var(--primary);
+}
+.axis-label {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+.axis-label span {
+  white-space: nowrap;
+}
+.axes small {
+  font-size: 11px;
+}
+.route-item {
+  flex-wrap: wrap;
+  color: var(--ink);
+}
+.route-item p {
+  margin: 6px 0 0;
+}
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  background: white;
+  padding: 12px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 10px;
+}
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+h1:focus {
+  outline: none;
+}
+.continuation {
+  border-left: 4px solid var(--primary);
+}
+@media (max-width: 700px) {
+  .app-header {
+    padding: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .app-header .brand {
+    font-size: 20px;
+  }
+  .app-header nav {
+    width: 100%;
+    order: 3;
+    gap: 20px;
+  }
+  .app-header > .btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .content {
+    padding: 20px 16px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .grid2,
+  .case-layout {
+    grid-template-columns: 1fr;
+  }
+  .auth {
+    padding: 20px 14px;
+  }
+  .route-item .btn {
+    width: 100%;
+  }
+  .topbar {
+    padding: 16px;
+  }
+  .hero {
+    padding: 45px 20px;
+  }
+  .section {
+    padding: 30px 20px;
+  }
+  .practice-top {
+    font-size: 13px;
+  }
+  .axis-label {
+    flex-wrap: wrap;
+  }
+  .hero-card {
+    overflow: hidden;
+  }
+  .option {
+    padding: 12px;
+    gap: 9px;
+  }
+  .letter {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.clinical-box {
+  white-space: pre-line;
+}
+.feedback details p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Authenticated application navigation, shared by every nested route. */
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100dvh;
+}
+.app-shell.is-collapsed {
+  grid-template-columns: 84px minmax(0, 1fr);
+}
+.app-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #174f53;
+  color: #fff;
+  padding: 24px 16px;
+  gap: 22px;
+}
+.app-sidebar .brand {
+  color: #fff;
+  gap: 10px;
+  font-size: 20px;
+  min-width: 0;
+}
+.app-sidebar .brand-mark {
+  flex-shrink: 0;
+}
+.side-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.app-sidebar .collapse {
+  position: static;
+  background: #ffffff18;
+  color: #fff;
+  border: 1px solid #ffffff40;
+  min-width: 28px;
+  min-height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.app-sidebar .side-nav {
+  display: grid;
+  gap: 8px;
+}
+.app-sidebar .side-nav a {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 12px;
+  border-radius: 12px;
+  color: #d8eeeb;
+  text-decoration: none;
+}
+.app-sidebar .side-nav a.active {
+  color: #fff;
+  background: #ffffff20;
+  box-shadow: inset 3px 0 #e6a08a;
+}
+.app-sidebar .side-nav a:hover {
+  background: #ffffff15;
+}
+.side-account {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: auto;
+  overflow-wrap: anywhere;
+}
+.sidebar-logout {
+  color: #fff;
+  background: #ffffff12;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.is-collapsed .app-sidebar .nav-label {
+  display: none;
+}
+.is-collapsed .side-brand {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.app-shell > .content {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  min-width: 0;
+  padding: 32px;
+}
+.preference-fields,
+.setup-grid {
+  margin-bottom: 20px;
+}
+fieldset {
+  min-width: 0;
+  border: 1px solid #d6e0dc;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+legend {
+  font-weight: 650;
+  padding: 0 8px;
+}
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  cursor: pointer;
+}
+.check-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: #174f53;
+  flex-shrink: 0;
+}
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+.catalog-branch {
+  padding: 14px 0;
+  border-top: 1px solid #d6e0dc;
+}
+.catalog-branch summary {
+  cursor: pointer;
+  font-weight: 650;
+  padding: 10px 0;
+}
+.catalog-branch .route-item {
+  flex-wrap: wrap;
+}
+.session-proposal {
+  padding: 12px 0;
+}
+.field textarea {
+  width: 100%;
+  min-height: 85px;
+  padding: 12px;
+  border: 1px solid #ccd7d3;
+  border-radius: 10px;
+  font: inherit;
+}
+.app-sidebar a:focus-visible,
+.app-sidebar button:focus-visible {
+  outline: 3px solid #e6a08a;
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .app-shell,
+  .app-shell.is-collapsed {
+    grid-template-columns: 1fr;
+  }
+  .app-sidebar {
+    position: relative;
+    height: auto;
+    padding: 14px;
+    gap: 14px;
+  }
+  .app-sidebar .side-brand {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .app-sidebar .collapse {
+    display: none;
+  }
+  .app-sidebar .side-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .app-sidebar .side-nav a {
+    padding: 10px 8px;
+    gap: 6px;
+    font-size: 14px;
+  }
+  .app-sidebar .nav-label,
+  .is-collapsed .app-sidebar .nav-label {
+    display: inline;
+  }
+  .side-account {
+    display: none;
+  }
+  .sidebar-logout {
+    align-self: flex-end;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  .app-shell > .content {
+    padding: 22px 16px;
+  }
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
+}
