@@ -41,3 +41,9 @@ legacy/
 test-results/
 playwright-report/
 *.tsbuildinfo
+
+skills-lock.json
+
+.neon/
+
+.render/

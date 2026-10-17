@@ -41,3 +41,9 @@ playwright-report/
 *.tsbuildinfo
 .git
 .github
+
+skills-lock.json
+
+.neon/
+
+.render/
